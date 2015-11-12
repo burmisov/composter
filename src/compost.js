@@ -3,10 +3,10 @@ import invariant from 'invariant';
 import hoistStatics from 'hoist-non-react-statics';
 
 function getDisplayName(WrappedComponent) {
-  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
 }
 
-export default function compost({ name, live = false }) {
+export default function compost({ name /* , live = false */}) {
   invariant(name, '`name` option shoud be specified.');
 
   return function wrapWithCompost(WrappedComponent) {
@@ -21,5 +21,5 @@ export default function compost({ name, live = false }) {
     Compost.displayName = `Compost(${getDisplayName(WrappedComponent)})`;
 
     return hoistStatics(Compost, WrappedComponent);
-  }
+  };
 }
