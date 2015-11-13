@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/",
-    "jest": "BABEL_JEST_STAGE=0 jest",
+    "jest": "test",
     "test": "npm run lint && npm run jest"
   },
   "author": "",
@@ -32,6 +32,9 @@
       "<rootDir>/node_modules/react-dom",
       "<rootDir>/node_modules/react-addons-test-utils",
       "<rootDir>/node_modules/fbjs"
-    ]
+    ],
+    "globals": {
+      "__DEV__": true
+    }
   }
 }
